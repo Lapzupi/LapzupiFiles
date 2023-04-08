@@ -1,3 +1,5 @@
+package dev.lapzupi.com.files
+
 import org.bukkit.plugin.java.JavaPlugin
 import java.io.File
 import java.io.FileFilter
