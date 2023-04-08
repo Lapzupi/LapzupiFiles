@@ -1,5 +1,6 @@
 import org.bukkit.plugin.java.JavaPlugin
 import java.io.File
+import java.io.FileFilter
 import java.io.IOException
 import java.security.CodeSource
 import java.util.function.Predicate
@@ -31,6 +32,10 @@ class FileUtil private constructor() {
             }
             
             return fileNames
+        }
+        
+        fun getFileNamesFromFolder(folder: File, pattern: FileFilter): List<String> {
+            return folder.listFiles(pattern)?.map{ file -> file.name} ?: emptyList()
         }
         
         fun saveFileFromJar(plugin: JavaPlugin, resourcePath: String, fileName: String, folder: File?) {
