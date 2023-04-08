@@ -1,6 +1,8 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
+    id("java")
+    id("maven-publish")
     kotlin("jvm") version "1.8.20"
 }
 
@@ -25,4 +27,24 @@ tasks.test {
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "17"
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
+
+
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = groupId
+            artifactId = artifactId
+            version = version
+            
+            from(components["java"])
+        }
+    }
 }
