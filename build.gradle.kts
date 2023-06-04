@@ -6,8 +6,8 @@ plugins {
     kotlin("jvm") version "1.8.20"
 }
 
-group = "dev.lapzupi.com"
-version = "1.0.0"
+group = "com.lapzupi.dev"
+version = "1.0.1"
 
 repositories {
     mavenCentral()

@@ -1,4 +1,4 @@
-package dev.lapzupi.com.files
+package com.lapzupi.dev.files
 
 import org.bukkit.plugin.java.JavaPlugin
 import java.io.File
