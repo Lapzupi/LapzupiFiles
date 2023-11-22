@@ -3,11 +3,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     id("java")
     id("maven-publish")
-    kotlin("jvm") version "1.8.20"
+    kotlin("jvm") version "1.9.20"
 }
 
 group = "com.lapzupi.dev"
-version = "1.0.2"
+version = "1.0.3"
 
 repositories {
     mavenCentral()
