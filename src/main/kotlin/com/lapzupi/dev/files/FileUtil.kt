@@ -16,6 +16,7 @@ object FileUtil {
     /**
      * plugin.getClass().getProtectionDomain().getCodeSource()
      */
+    @JvmStatic
     @Throws(IOException::class)
     fun getFileNamesInJar(source: CodeSource, fileCondition: Predicate<ZipEntry?>): List<String> {
         val fileNames: MutableList<String> = ArrayList()
@@ -33,10 +34,12 @@ object FileUtil {
         return fileNames
     }
 
+    @JvmStatic
     fun getFileNamesFromFolder(folder: File, pattern: FileFilter): List<String> {
         return folder.listFiles(pattern)?.map { file -> file.name } ?: emptyList()
     }
 
+    @JvmStatic
     fun saveFileFromJar(plugin: JavaPlugin, resourcePath: String, fileName: String, folder: File?) {
         val file = File(folder, fileName)
         if (!file.exists()) {
