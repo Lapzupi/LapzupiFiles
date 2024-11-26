@@ -7,7 +7,7 @@ plugins {
     kotlin("jvm") version "2.1.0-RC2"
 }
 
-group = "com.lapzupi.dev"
+group = "com.lapzupi.dev.files"
 version = "1.1.0"
 
 dependencies {
