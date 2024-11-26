@@ -27,6 +27,8 @@ java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(21))
     }
+
+    withSourcesJar()
 }
 
 
@@ -39,6 +41,7 @@ publishing {
             version = version
             
             from(components["java"])
+            artifact(tasks.named("sourcesJar"))
         }
     }
 }
