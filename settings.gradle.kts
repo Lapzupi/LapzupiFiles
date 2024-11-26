@@ -3,14 +3,18 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
     }
-    
 }
+
 rootProject.name = "LapzupiFiles"
 
 dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        maven("https://repo.papermc.io/repository/maven-public/")
+    }
     versionCatalogs {
         create("libs") {
-            library("spigot-api", "org.spigotmc:spigot-api:1.18.2-R0.1-SNAPSHOT")
+            library("paper-api", "io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT")
         }
     }
 }

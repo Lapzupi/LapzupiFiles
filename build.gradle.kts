@@ -1,23 +1,17 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     id("java")
     id("maven-publish")
-    kotlin("jvm") version "1.9.20"
+    kotlin("jvm") version "2.1.0-RC2"
 }
 
 group = "com.lapzupi.dev"
-version = "1.0.4"
-
-repositories {
-    mavenCentral()
-    maven(
-        url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/"
-    )
-}
+version = "1.1.0"
 
 dependencies {
-    compileOnly(libs.spigot.api)
+    compileOnly(libs.paper.api)
     testImplementation(kotlin("test"))
 }
 
@@ -26,12 +20,12 @@ tasks.test {
 }
 
 tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "17"
+    compilerOptions.jvmTarget.set(JvmTarget.JVM_21)
 }
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(17))
+        languageVersion.set(JavaLanguageVersion.of(21))
     }
 }
 
